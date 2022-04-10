@@ -4,7 +4,7 @@ import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
 
-    const { user, signOut } = useFirebase();
+    const { user, handelSignOut } = useFirebase();
 
     return (
         <div>
@@ -12,8 +12,11 @@ const Header = () => {
             <Link className='text-xl mr-5 hover:text-orange-400' to={'/orders'}>Orders</Link>
             <Link className='text-xl mr-5 hover:text-orange-400' to={'/register'}>Register</Link>
             {
+                user.uid ?
+                    <button onClick={handelSignOut} className='bg-cyan-600 text-yellow-50 border border-b rounded font-semibold p-1 px-3 mb-4 font-xl hover:bg-cyan-500 ' >Sign out</button>
+                    :
+                    <Link className='text-xl hover:text-orange-400' to={'/login'}>Log in</Link>
 
-                <Link className='text-xl hover:text-orange-400' to={'/login'}>Log in</Link>
 
             }
         </div>
