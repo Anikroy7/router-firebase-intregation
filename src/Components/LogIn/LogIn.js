@@ -1,8 +1,9 @@
 import React from 'react';
-import useFirebase from '../../hooks/useFirebase';
+import auth from '../../firebase.init';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
 const LogIn = () => {
-    const { signWithGoogle } = useFirebase();
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     return (
         <div>
             <section className='bg-slate-300  mx-auto p-8 w-3/4 mt-4'>
@@ -15,7 +16,7 @@ const LogIn = () => {
                     <input className='bg-slate-600 text-yellow-50 border border-b rounded p-1 px-3 mb-4 font-xl hover:bg-slate-700' type="submit" value="Login" />
 
                 </form>
-                <div onClick={signWithGoogle}>
+                <div onClick={() => signInWithGoogle()}>
                     <button className='bg-red-600 text-yellow-50 border border-b rounded font-semibold p-1 px-3 mb-4 font-xl hover:bg-red-500'>Sing with google</button>
                 </div>
             </section>
