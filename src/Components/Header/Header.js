@@ -9,7 +9,7 @@ const Header = () => {
 
     // const { user, handelSignOut } = useFirebase();
     const [user] = useAuthState(auth);
-    console.log(user);
+
     return (
         <div className='mt-4'>
             <Link className='text-xl mr-5 hover:text-orange-400' to={'/home'}>Home</Link>
