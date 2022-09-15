@@ -17,7 +17,7 @@ const LogIn = () => {
 
                 </form>
                 <div onClick={() => signInWithGoogle()}>
-                    <button className='bg-red-600 text-yellow-50 border border-b rounded font-semibold p-1 px-3 mb-4 font-xl hover:bg-red-500'>Sing with google</button>
+                    <button className='bg-red-500 text-yellow-40 border border-b rounded font-semibold p-1 px-3 mb-4 font-xl hover:bg-red-400'>Sing with google</button>
                 </div>
             </section>
         </div>
